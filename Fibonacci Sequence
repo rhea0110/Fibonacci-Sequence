@@ -1,0 +1,29 @@
+// The Fibonacci numbers are a sequence of numbers where each number after the first two is a sum of the prior two. As an illustration, here is a short sequence given starting values of (0, 1) is (0, 1, 1, 2, 3, 5, 8, 13).
+
+Write a program to generate and print the first n terms of the Fibonacci sequence where n >=1.
+
+import java.util.Scanner;
+
+class Main
+{
+   static void fib(int n)
+    {
+        int f1 = 0, f2 = 1, i;
+        if (n < 1)
+            return;
+        System.out.println(f1);
+        for (i = 1; i < n; i++)
+        {
+            System.out.println(f2);
+            int next = f1 + f2;
+            f1 = f2;
+            f2 = next;
+        }
+    }
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+       fib(n);
+    }
+}
